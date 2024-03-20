@@ -1,0 +1,25 @@
+{"level":"info","message":"/api/cartItems - {}","service":"request-logging"}
+{"level":"info","message":"/ - {}","service":"request-logging"}
+{"level":"info","message":"/api/cartItems - {}","service":"request-logging"}
+{"level":"info","message":"/ - {}","service":"request-logging"}
+{"level":"info","message":"/api/products/rating?userID=1&productId=10&rating=4 - {}","service":"request-logging"}
+{"level":"info","message":"/api/products/rating?userID=1&productId=10&rating=4 - {}","service":"request-logging"}
+{"level":"info","message":"/api/products/rating?userID=1&productId=10&rating=4 - {}","service":"request-logging"}
+{"level":"info","message":"/api/products/rating?userID=1&productId=1&rating=4 - {}","service":"request-logging"}
+{"level":"info","message":"/api/products/rating?userID=10&productId=1&rating=4 - {}","service":"request-logging"}
+{"level":"info","message":"/api/products/rating?userID=10&productId=1&rating=4 - {}","service":"request-logging"}
+{"level":"info","message":"/api/products/rating?userID=10&productId=1&rating=4 - {}","service":"request-logging"}
+{"level":"info","message":"/api/products/rating?userID=10&productId=1&rating=4 - {}","service":"request-logging"}
+{"level":"info","message":"/api/products/rating?userID=10&productId=1&rating=4 - {}","service":"request-logging"}
+{"level":"info","message":"/api/products/rating?userID=10&productId=1&rating=4 - {}","service":"request-logging"}
+{"level":"info","message":"/api/products/rating?userID=10&productId=1&rating=4 - {}","service":"request-logging"}
+{"level":"info","message":"/api/user/login - {\"email\":\"krvivi28@gmail.com\",\"password\":\"vivek28@\"}","service":"request-logging"}
+{"level":"info","message":"/api/users/signup - {\"name\":\"seller user\",\"email\":\"seller@gmail.com\",\"password\":\"password1\",\"type\":\"seller\"}","service":"request-logging"}
+{"level":"info","message":"/api/users/signup - {\"name\":\"seller user\",\"email\":\"seller@gmail.com\",\"password\":\"password1\",\"type\":\"seller\"}","service":"request-logging"}
+{"level":"info","message":"/api/users/signup - {\"name\":\"seller3 user\",\"email\":\"seller3@gmail.com\",\"password\":\"password1\",\"type\":\"seller3\"}","service":"request-logging"}
+{"level":"info","message":"/api/users/signup - {\"name\":\"seller3 user\",\"email\":\"seller3@gmail.com\",\"password\":\"password1\",\"type\":\"seller3\"}","service":"request-logging"}
+{"level":"info","message":"/api/users/signup - {\"name\":\"seller3 user\",\"email\":\"seller3@gmail.com\",\"password\":\"password1\",\"type\":\"seller3\"}","service":"request-logging"}
+{"level":"info","message":"/api/users/signup - {\"name\":\"seller3 user\",\"email\":\"seller3@gmail.com\",\"password\":\"password1\",\"type\":\"seller3\"}","service":"request-logging"}
+{"level":"info","message":"/api/users/signup - {\"name\":\"seller3 user\",\"email\":\"seller3@gmail.com\",\"password\":\"password1\",\"type\":\"seller3\"}","service":"request-logging"}
+{"level":"info","message":"/api/users/signup - {\"name\":\"customer2 user\",\"email\":\"customer2@gmail.com\",\"password\":\"password1\",\"type\":\"customer\"}","service":"request-logging"}
+{"level":"info","message":"/api/users/signup - {\"name\":\"customer2 user\",\"email\":\"customer2@gmail.com\",\"password\":\"password1\",\"type\":\"customer\"}","service":"request-logging"}
