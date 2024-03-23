@@ -1,8 +1,8 @@
 import { ApplicationError } from "../../error-handler/applicationError.js";
 import UserModel from "../User/user.model.js";
 export default class ProductModel {
-  constructor(id, name, price, desc, imageUrl, category, sizes) {
-    (this.id = id),
+  constructor(name, price, desc, imageUrl, category, sizes, id) {
+    (this._id = id),
       (this.name = name),
       (this.price = price),
       (this.desc = desc),
@@ -10,61 +10,39 @@ export default class ProductModel {
       (this.category = category),
       (this.sizes = sizes);
   }
-  static add(product) {
-    product.id = products.length + 1;
-    products.push(product);
-    return product;
-  }
-  static get(id) {
-    const product = products.find((p) => p.id == id);
-    return product;
-  }
 
-  static getAll() {
-    return products;
-  }
-  static filter(minPrice, maxPrice, category) {
-    const result = products.filter((product) => {
-      return (
-        (!minPrice || product.price >= minPrice) &&
-        (!maxPrice || product.price <= maxPrice) &&
-        (!category || product.category == category)
-      );
-    });
-    return result;
-  }
-  static productRating(userID, productId, rating) {
-    //1. validating user and product
-    const rateUser = UserModel.getAll().find((u) => u.id == userID);
-    if (!rateUser) {
-      throw new ApplicationError("user not found");
-    }
-    //validating product
-    const product = products.find((p) => p.id == productId);
-    if (!product) {
-      throw new ApplicationError("product not found");
-    }
-    //check od there are ratings if not add ratings array
-    if (!product.ratings) {
-      product.ratings = [];
-      product.ratings.push({ userID: userID, rating: rating });
-    } else {
-      // check if user rating is already available
-      console.log(product.ratings);
-      const existingRatingIndex = product.ratings.findIndex(
-        (r) => r.userID == userID
-      );
-      if (existingRatingIndex >= 0) {
-        product.ratings[existingRatingIndex] = {
-          userID: userID,
-          rating: rating,
-        };
-      } else {
-        //if no existing rating ad new rating
-        product.ratings.push({ userID: userID, rating: rating });
-      }
-    }
-  }
+  // static productRating(userID, productId, rating) {
+  //   //1. validating user and product
+  //   const rateUser = UserModel.getAll().find((u) => u.id == userID);
+  //   if (!rateUser) {
+  //     throw new ApplicationError("user not found");
+  //   }
+  //   //validating product
+  //   const product = products.find((p) => p.id == productId);
+  //   if (!product) {
+  //     throw new ApplicationError("product not found");
+  //   }
+  //   //check od there are ratings if not add ratings array
+  //   if (!product.ratings) {
+  //     product.ratings = [];
+  //     product.ratings.push({ userID: userID, rating: rating });
+  //   } else {
+  //     // check if user rating is already available
+  //     console.log(product.ratings);
+  //     const existingRatingIndex = product.ratings.findIndex(
+  //       (r) => r.userID == userID
+  //     );
+  //     if (existingRatingIndex >= 0) {
+  //       product.ratings[existingRatingIndex] = {
+  //         userID: userID,
+  //         rating: rating,
+  //       };
+  //     } else {
+  //       //if no existing rating ad new rating
+  //       product.ratings.push({ userID: userID, rating: rating });
+  //     }
+  //   }
+  // }
 }
 
 var products = [

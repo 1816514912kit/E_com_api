@@ -1,4 +1,3 @@
-import { ApplicationError } from "../../error-handler/applicationError.js";
 import UserModel from "./user.model.js";
 import jsonwebtoken from "jsonwebtoken";
 import UserRepository from "./user.repository.js";
@@ -25,18 +24,18 @@ export default class UserController {
       //1. Find User By Email
       const user = await this.userRepository.findByEmail(req.body.email);
       if (!user) {
-        return res.status(400).send("Incorrect Credentials");
+        return res.status(400).send("User not found user controller");
       } else {
         // we match the password with hashed password
         const result = await bcrypt.compare(req.body.password, user.password);
+        // console.log(req.body.password, "user-pwd: ", user.password);
         if (result) {
           //1. create token
           const token = jsonwebtoken.sign(
-            { userID: result.id, email: result.email },
-            "F942DDF91A4AC1D5FC1222481C459",
+            { userID: user._id, email: user.email },
+            process.env.JWT_SECRET,
             { expiresIn: "1h" }
           );
-          console.log(token);
           //2.send token
           return res.status(200).send(token);
         } else {

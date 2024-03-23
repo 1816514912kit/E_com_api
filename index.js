@@ -1,3 +1,4 @@
+import "./env.js";
 import express from "express";
 import swagger from "swagger-ui-express";
 
@@ -15,12 +16,12 @@ const app = express();
 
 // app.use(bodyParser.json());
 app.use(express.json());
-app.use(loggerMiddleware);
+// app.use(loggerMiddleware);
 
 app.use("/api-docs", swagger.serve, swagger.setup(apiDocs));
 app.use("/api/products", JwtAuth, productRouter);
 app.use("/api/users", userRouter);
-app.use("/api/cartItems", JwtAuth, loggerMiddleware, cartRouter);
+app.use("/api/cartItems", loggerMiddleware, cartRouter);
 // CORS Policy Configuration
 
 app.get("/", (req, res) => {

@@ -23,3 +23,39 @@
 {"level":"info","message":"/api/users/signup - {\"name\":\"seller3 user\",\"email\":\"seller3@gmail.com\",\"password\":\"password1\",\"type\":\"seller3\"}","service":"request-logging"}
 {"level":"info","message":"/api/users/signup - {\"name\":\"customer2 user\",\"email\":\"customer2@gmail.com\",\"password\":\"password1\",\"type\":\"customer\"}","service":"request-logging"}
 {"level":"info","message":"/api/users/signup - {\"name\":\"customer2 user\",\"email\":\"customer2@gmail.com\",\"password\":\"password1\",\"type\":\"customer\"}","service":"request-logging"}
+{"level":"info","message":"/ - {\"productId\":\"65fc049dc2735ce90993121a\",\"quantity\":2}","service":"request-logging"}
+{"level":"info","message":"/ - {\"productId\":\"65fc049dc2735ce90993121a\",\"quantity\":2}","service":"request-logging"}
+{"level":"info","message":"/ - {\"productId\":\"65fc049dc2735ce90993121a\",\"quantity\":2}","service":"request-logging"}
+{"level":"info","message":"/ - {\"productId\":\"65fc049dc2735ce90993121a\",\"quantity\":2}","service":"request-logging"}
+{"level":"info","message":"/ - {\"productId\":\"65fc049dc2735ce90993121a\",\"quantity\":2}","service":"request-logging"}
+{"level":"info","message":"/?productId=65fc049dc2735ce90993121a&quantity=4 - {}","service":"request-logging"}
+{"level":"info","message":"/ - {\"productId\":\"65fc049dc2735ce90993121a\",\"quantity\":2}","service":"request-logging"}
+{"level":"info","message":"/ - {\"productId\":\"65fc049dc2735ce90993121a\",\"quantity\":2}","service":"request-logging"}
+{"level":"info","message":"/ - {\"productId\":\"65fc049dc2735ce90993121a\",\"quantity\":2}","service":"request-logging"}
+{"level":"info","message":"/ - {\"productId\":\"65fc049dc2735ce90993121a\",\"quantity\":2}","service":"request-logging"}
+{"level":"info","message":"/ - {\"productId\":\"65fc049dc2735ce90993121a\",\"quantity\":2}","service":"request-logging"}
+{"level":"info","message":"/ - {\"productId\":\"65fc049dc2735ce90993121a\",\"quantity\":2}","service":"request-logging"}
+{"level":"info","message":"/ - {\"productId\":\"65fc049dc2735ce90993121a\",\"quantity\":2}","service":"request-logging"}
+{"level":"info","message":"/ - {\"productId\":\"65fc049dc2735ce90993121a\",\"quantity\":2}","service":"request-logging"}
+{"level":"info","message":"/ - {\"productId\":\"65fc049dc2735ce90993121a\",\"quantity\":2}","service":"request-logging"}
+{"level":"info","message":"/ - {\"productId\":\"65fc049dc2735ce90993121a\",\"quantity\":2}","service":"request-logging"}
+{"level":"info","message":"/ - {\"productId\":\"65fc0d487ef2ee87d7a8e90a\",\"quantity\":3}","service":"request-logging"}
+{"level":"info","message":"/ - {\"productId\":\"65fc0d487ef2ee87d7a8e90a\",\"quantity\":3}","service":"request-logging"}
+{"level":"info","message":"/ - {\"productId\":\"65fc0d487ef2ee87d7a8e90a\",\"quantity\":3}","service":"request-logging"}
+{"level":"info","message":"/ - {\"productId\":\"65fc0d487ef2ee87d7a8e90a\",\"quantity\":3}","service":"request-logging"}
+{"level":"info","message":"/ - {\"productId\":\"65fc0d487ef2ee87d7a8e90a\",\"quantity\":3}","service":"request-logging"}
+{"level":"info","message":"/ - {\"productId\":\"65fc0d487ef2ee87d7a8e90a\",\"quantity\":3}","service":"request-logging"}
+{"level":"info","message":"/ - {\"productId\":\"65fc0d537ef2ee87d7a8e90b\",\"quantity\":3}","service":"request-logging"}
+{"level":"info","message":"/ - {\"productId\":\"65fc0d537ef2ee87d7a8e90b\",\"quantity\":3}","service":"request-logging"}
+{"level":"info","message":"/ - {\"productId\":\"65fc0d537ef2ee87d7a8e90b\",\"quantity\":3}","service":"request-logging"}
+{"level":"info","message":"/ - {\"productId\":\"65fc0d537ef2ee87d7a8e90b\",\"quantity\":3}","service":"request-logging"}
+{"level":"info","message":"/ - {\"productId\":\"65fc0d537ef2ee87d7a8e90b\",\"quantity\":3}","service":"request-logging"}
+{"level":"info","message":"/ - {\"productId\":\"65fc0d537ef2ee87d7a8e90b\",\"quantity\":3}","service":"request-logging"}
+{"level":"info","message":"/ - {\"productId\":\"65fc0d537ef2ee87d7a8e90b\",\"quantity\":3}","service":"request-logging"}
+{"level":"info","message":"/ - {\"productId\":\"65fc0d537ef2ee87d7a8e90b\",\"quantity\":3}","service":"request-logging"}
+{"level":"info","message":"/ - {\"productId\":\"65fc0d537ef2ee87d7a8e90b\",\"quantity\":3}","service":"request-logging"}
+{"level":"info","message":"/ - {\"productId\":\"65fc0d537ef2ee87d7a8e90b\",\"quantity\":3}","service":"request-logging"}
+{"level":"info","message":"/ - {\"productId\":\"65fc0d537ef2ee87d7a8e90b\",\"quantity\":3}","service":"request-logging"}
+{"level":"info","message":"/ - {\"productId\":\"65fc0d537ef2ee87d7a8e90b\",\"quantity\":3}","service":"request-logging"}
+{"level":"info","message":"/ - {\"productId\":\"65fc0d537ef2ee87d7a8e90b\",\"quantity\":3}","service":"request-logging"}
+{"level":"info","message":"/ - {\"productId\":\"65fc0eeeb63cd7da3b0a3a1b\",\"quantity\":3}","service":"request-logging"}

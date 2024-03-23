@@ -7,25 +7,17 @@ export default class CartItemModel {
     this.quantity = quantity;
     this.id = id;
   }
-  static add(userID, productId, quantity) {
-    const cartItem = new CartItemModel(userID, productId, quantity);
-    cartItem.id = cartItems.length + 1;
-    cartItems.push(cartItem);
-    return cartItem;
-  }
-  static get(userID) {
-    return cartItems.filter((i) => i.userID == userID);
-  }
-  static delete(cartItemId, userID) {
-    const cartItemIndex = cartItems.findIndex(
-      (i) => i.id == cartItemId && i.userID == userID
-    );
-    if (cartItemIndex == -1) {
-      return "cart item not found";
-    } else {
-      cartItems.splice(cartItemIndex, 1);
-    }
-  }
+
+  // static delete(cartItemId, userID) {
+  //   const cartItemIndex = cartItems.findIndex(
+  //     (i) => i.id == cartItemId && i.userID == userID
+  //   );
+  //   if (cartItemIndex == -1) {
+  //     return "cart item not found";
+  //   } else {
+  //     cartItems.splice(cartItemIndex, 1);
+  //   }
+  // }
   static addQuantity(userID, productId, quantity) {
     //1. validating user and product
     console.log(userID);
