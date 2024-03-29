@@ -33,9 +33,7 @@ export default class CartItemRepository {
     try {
       const db = getDB();
       const collection = db.collection(this.collection);
-      return await collection
-        .findOne({ userID: new ObjectId(userID) })
-        .toArray();
+      return await collection.find({ userID: new ObjectId(userID) }).toArray();
     } catch (err) {
       throw new ApplicationError("something went wrong in d/b", 500);
     }

@@ -12,6 +12,7 @@ import apiDocs from "./swagger.json" assert { type: "json" };
 import loggerMiddleware from "./src/middlewares/logger.middleware.js";
 import { ApplicationError } from "./src/error-handler/applicationError.js";
 import { connectToMongoDB } from "./src/config/mongodb.js";
+import orderRouter from "./src/features/Order/order.routes.js";
 const app = express();
 
 // app.use(bodyParser.json());
@@ -19,9 +20,11 @@ app.use(express.json());
 // app.use(loggerMiddleware);
 
 app.use("/api-docs", swagger.serve, swagger.setup(apiDocs));
+app.use("/api/orders", JwtAuth, orderRouter);
+
 app.use("/api/products", JwtAuth, productRouter);
 app.use("/api/users", userRouter);
-app.use("/api/cartItems", loggerMiddleware, cartRouter);
+app.use("/api/cartItems", loggerMiddleware, JwtAuth, cartRouter);
 // CORS Policy Configuration
 
 app.get("/", (req, res) => {

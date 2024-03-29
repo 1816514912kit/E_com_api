@@ -1,5 +1,5 @@
 import UserModel from "./user.model.js";
-import jsonwebtoken from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 import UserRepository from "./user.repository.js";
 import bcrypt from "bcrypt";
 export default class UserController {
@@ -31,11 +31,9 @@ export default class UserController {
         // console.log(req.body.password, "user-pwd: ", user.password);
         if (result) {
           //1. create token
-          const token = jsonwebtoken.sign(
-            { userID: user._id, email: user.email },
-            process.env.JWT_SECRET,
-            { expiresIn: "1h" }
-          );
+          const token = jwt.sign({ userID: user._id }, process.env.JWT_SECRET, {
+            expiresIn: "1h",
+          });
           //2.send token
           return res.status(200).send(token);
         } else {

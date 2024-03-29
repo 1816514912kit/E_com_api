@@ -129,5 +129,23 @@ class ProductRepository {
       throw new ApplicationError("Something Went Wrong  in rating d/b", 500);
     }
   }
+  async averageProductPricePerCategory() {
+    try {
+      const db = getDB();
+      return await db
+        .collection(this.collection)
+        .aggregate([
+          {
+            $group: {
+              _id: "$category",
+              averagePrice: { $avg: "$price" },
+            },
+          },
+        ])
+        .toArray();
+    } catch (err) {
+      console.log(err);
+    }
+  }
 }
 export default ProductRepository;

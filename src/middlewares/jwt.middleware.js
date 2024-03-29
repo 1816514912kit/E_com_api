@@ -27,7 +27,7 @@
 // // 1. inside postman Authorization -> Noauth
 // // 2. copy token when signin and make key inside headers key= Authorization value = token
 
-import jsonwebtoken from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 
 const JwtAuth = (req, res, next) => {
   // Read token from the Authorization header
@@ -40,7 +40,7 @@ const JwtAuth = (req, res, next) => {
 
   try {
     // Verify the token using the secret key
-    const payload = jsonwebtoken.verify(token, "F942DDF91A4AC1D5FC1222481C459");
+    const payload = jwt.verify(token, "F942DDF91A4AC1D5FC1222481C459");
     console.log(payload);
 
     // Attach the userID from the payload to the request object

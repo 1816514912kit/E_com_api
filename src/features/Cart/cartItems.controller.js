@@ -16,12 +16,12 @@ export default class CartItemController {
         productId,
         quantity
       );
-      res.status(201).send("Cart is updated");
+      return res.status(201).send("Cart is updated");
 
       if (!cart) {
-        res.status(400).send("item not found");
+        return res.status(400).send("item not found");
       } else {
-        res.status(200).send("cart item has been updated");
+        return res.status(200).send("cart item has been updated");
       }
     } catch (err) {
       return res.status(400).send("something went wrong from addProduct");
@@ -30,10 +30,11 @@ export default class CartItemController {
   async get(req, res) {
     try {
       const userID = req.userID; // userID you can check inside jwtmiddleware in 3/.
-      const items = this.cartItemRepository.get(userID);
-      res.status(200).send(items);
+      // console.log(userID);
+      const items = await this.cartItemRepository.get(userID);
+      return res.status(200).send(items);
     } catch (err) {
-      return res.status(400).send("something went wrong from addProduct");
+      return res.status(400).send("something went wrong from getProduct");
     }
   }
 

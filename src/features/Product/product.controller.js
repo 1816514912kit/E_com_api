@@ -26,9 +26,9 @@ export default class ProductController {
       );
 
       const createdRecord = await this.productRepository.add(newProduct);
-      res.status(201).send(createdRecord);
+      return res.status(201).send(createdRecord);
     } catch (err) {
-      return res.status(400).send("something went wrong from addProduct");
+      return res.status(400).send("something went wrong from getallProduct");
     }
   }
 
@@ -37,12 +37,12 @@ export default class ProductController {
       const id = req.params.id;
       var product = await this.productRepository.get(id);
       if (!product) {
-        res.status(404).send("product is not found");
+        return res.status(404).send("product is not found");
       } else {
         return res.status(200).send(product);
       }
     } catch (err) {
-      return res.status(400).send("something went wrong from addProduct");
+      return res.status(400).send("something went wrong from getOneProduct");
     }
   }
 
@@ -77,6 +77,16 @@ export default class ProductController {
       console.log(err);
       console.log("Passing error to middleware");
       next(err);
+    }
+  }
+  async averageProductPricePerCategory(req, res) {
+    try {
+      const result =
+        await this.productRepository.averageProductPricePerCategory();
+      return res.status(200).send(result);
+    } catch (err) {
+      console.log(err);
+      return res.status(200).send("Something went wrong");
     }
   }
 }
