@@ -2,6 +2,7 @@ import UserModel from "./user.model.js";
 import jwt from "jsonwebtoken";
 import UserRepository from "./user.repository.js";
 import bcrypt from "bcrypt";
+import { MongoError } from "mongodb";
 export default class UserController {
   constructor() {
     this.userRepository = new UserRepository();
@@ -41,7 +42,20 @@ export default class UserController {
         }
       }
     } catch (err) {
+      console.log(err);
       return res.status(400).send("something went wrong from signin");
+    }
+  }
+  async resetPassword(req, res) {
+    const { newPassword } = req.body;
+    const userID = req.userID;
+    const hashedPassword = await bcrypt.hash(newPassword, 10);
+    try {
+      await this.userRepository.resetPassword(userID, hashedPassword);
+      return res.status(200).send("reset password done");
+    } catch (err) {
+      console.log(err);
+      return res.status(400).send("something went wrong from resetpass");
     }
   }
 }

@@ -13,6 +13,7 @@ import loggerMiddleware from "./src/middlewares/logger.middleware.js";
 import { ApplicationError } from "./src/error-handler/applicationError.js";
 import { connectToMongoDB } from "./src/config/mongodb.js";
 import orderRouter from "./src/features/Order/order.routes.js";
+import { connectMongooseToMongoDB } from "./src/config/mongooseConfig.js";
 const app = express();
 
 // app.use(bodyParser.json());
@@ -47,5 +48,6 @@ app.use((req, res) => {
 
 app.listen("3002", () => {
   console.log("server is running on 3002");
-  connectToMongoDB();
+  // connectToMongoDB();
+  connectMongooseToMongoDB();
 });
