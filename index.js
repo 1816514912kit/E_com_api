@@ -14,6 +14,8 @@ import { ApplicationError } from "./src/error-handler/applicationError.js";
 import { connectToMongoDB } from "./src/config/mongodb.js";
 import orderRouter from "./src/features/Order/order.routes.js";
 import { connectMongooseToMongoDB } from "./src/config/mongooseConfig.js";
+import mongoose from "mongoose";
+import likeRouter from "./src/features/Like/like.routes.js";
 const app = express();
 
 // app.use(bodyParser.json());
@@ -24,8 +26,11 @@ app.use("/api-docs", swagger.serve, swagger.setup(apiDocs));
 app.use("/api/orders", JwtAuth, orderRouter);
 
 app.use("/api/products", JwtAuth, productRouter);
-app.use("/api/users", userRouter);
 app.use("/api/cartItems", loggerMiddleware, JwtAuth, cartRouter);
+
+app.use("/api/users", userRouter);
+app.use("/api/likes", JwtAuth, likeRouter);
+
 // CORS Policy Configuration
 
 app.get("/", (req, res) => {
@@ -33,9 +38,11 @@ app.get("/", (req, res) => {
 });
 // Error handler Middleware
 app.use((err, req, res, next) => {
-  console.log(err);
+  if (err instanceof mongoose.Error.ValidationError) {
+    return res.status(400).send(err.message);
+  }
   if (err instanceof ApplicationError) {
-    res.status(err.code).send(err.message);
+    return res.status(err.code).send(err.message);
   }
   //server errors
   res.status(500).send("Something Went Wrong");

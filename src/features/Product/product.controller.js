@@ -9,26 +9,26 @@ export default class ProductController {
       var products = await this.productRepository.getAll();
       res.status(200).send(products);
     } catch (err) {
-      return res.status(400).send("something went wrong from addProduct");
+      return res.status(400).send("something went wrong from gellAll Product");
     }
   }
 
   async addProduct(req, res) {
     try {
-      const { name, price, sizes } = req.body;
+      const { name, price, desc, categories, sizes } = req.body;
       const newProduct = new ProductModel(
         name,
         parseFloat(price),
-        null,
-        req.file.filename,
-        null,
-        sizes.split(",")
+        desc,
+        req?.file?.filename,
+        categories,
+        sizes?.split(",")
       );
 
       const createdRecord = await this.productRepository.add(newProduct);
       return res.status(201).send(createdRecord);
     } catch (err) {
-      return res.status(400).send("something went wrong from getallProduct");
+      return res.status(400).send("something went wrong from add Product");
     }
   }
 

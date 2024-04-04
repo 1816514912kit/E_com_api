@@ -2,22 +2,32 @@ import UserModel from "./user.model.js";
 import jwt from "jsonwebtoken";
 import UserRepository from "./user.repository.js";
 import bcrypt from "bcrypt";
-import { MongoError } from "mongodb";
 export default class UserController {
   constructor() {
     this.userRepository = new UserRepository();
   }
-  async signUp(req, res) {
+  async resetPassword(req, res, next) {
+    const { newPassword } = req.body;
+    const userID = req.userID;
+    const hashedPassword = await bcrypt.hash(newPassword, 10);
     try {
-      const { name, email, password, type } = req.body;
+      await this.userRepository.resetPassword(userID, hashedPassword);
+      return res.status(200).send("reset password done");
+    } catch (err) {
+      console.log(err);
+      next();
+    }
+  }
+  async signUp(req, res, next) {
+    const { name, email, password, type } = req.body;
 
+    try {
       const hashedPassword = await bcrypt.hash(password, 10);
-
       const user = new UserModel(name, email, hashedPassword, type);
       await this.userRepository.signUp(user);
       res.status(201).send(user);
     } catch (err) {
-      res.status(201).send("some thing went wrong in signup");
+      next(err);
     }
   }
   async signIn(req, res, next) {
@@ -44,18 +54,6 @@ export default class UserController {
     } catch (err) {
       console.log(err);
       return res.status(400).send("something went wrong from signin");
-    }
-  }
-  async resetPassword(req, res) {
-    const { newPassword } = req.body;
-    const userID = req.userID;
-    const hashedPassword = await bcrypt.hash(newPassword, 10);
-    try {
-      await this.userRepository.resetPassword(userID, hashedPassword);
-      return res.status(200).send("reset password done");
-    } catch (err) {
-      console.log(err);
-      return res.status(400).send("something went wrong from resetpass");
     }
   }
 }
